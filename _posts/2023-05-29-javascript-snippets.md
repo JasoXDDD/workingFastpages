@@ -105,7 +105,7 @@ permalink: /javascriptTicket
         const y = e.clientY - rect.top;
         console.log(x,y);
         if (!(clicked)){
-            if (245<x&&x<255 && 395<y&&y<400){
+            if (240<x&&x<260 && 390<y&&y<410){
                 let counter=0
                 clicked = true;
                 const id = setInterval(() => {
@@ -126,6 +126,8 @@ permalink: /javascriptTicket
             }
         
         } else {
+            let counter = 9
+            clicked = false;
             const id = setInterval(() => {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.beginPath();
