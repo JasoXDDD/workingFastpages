@@ -75,7 +75,7 @@ permalink: /javascriptTicket
         '<th>Name</th>' +
         '<th>Score</th>' +
         '</tr>';
-    $('#recentGames').append(labelsRow);
+    $('#table').append(labelsRow);
 
     let array = [{"name":"Jason","score":1000},
             {"name":"Jaso","score":1200}];
@@ -90,6 +90,6 @@ permalink: /javascriptTicket
             '<td>' + score + '</td>' +
             '</tr>';
 
-        $('#recentGames').append(row);
+        $('#table').append(row);
     });
 </script>
