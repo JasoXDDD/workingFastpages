@@ -92,6 +92,7 @@ permalink: /javascriptTicket
     ctx.beginPath();
     ctx.arc(250, 400, 10, 0, 2 * Math.PI, true);
     ctx.fill();
+    let clicked = false;
     c.addEventListener('mousedown', function (e) {
         // Get the target
         const target = e.target;
@@ -103,23 +104,26 @@ permalink: /javascriptTicket
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
         console.log(x,y);
-        if (245<x<255 && 395<y<400){
-            let counter=0
-            const id = setInterval(() => {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.beginPath();
-                ctx.arc(250, 400, 10+counter, 0, 2 * Math.PI, true);
-                ctx.fillStyle = "#30db72";
-                ctx.fill(); 
-                ctx.beginPath();
-                ctx.arc(250, 400, 10-counter, 0, 2 * Math.PI, true);
-                ctx.fillStyle = "#000000";
-                ctx.fill();
-                counter+=1;
-                if (counter==9){
-                    clearInterval(id);
-                }
-              }, 50);
+        if (!(clicked)){
+            if (245<x&&x<255 && 395<y&&y<400){
+                let counter=0
+                const id = setInterval(() => {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.beginPath();
+                    ctx.arc(250, 400, 10+counter, 0, 2 * Math.PI, true);
+                    ctx.fillStyle = "#30db72";
+                    ctx.fill(); 
+                    ctx.beginPath();
+                    ctx.arc(250, 400, 10-counter, 0, 2 * Math.PI, true);
+                    ctx.fillStyle = "#000000";
+                    ctx.fill();
+                    counter+=1;
+                    if (counter==9){
+                        clearInterval(id);
+                    }
+                  }, 50);
+        }
+        
         }
     });
 </script>
