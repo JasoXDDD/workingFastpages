@@ -1,6 +1,6 @@
------
-# Javascript Ticket
------
+---
+permalink: /javascriptTicket
+---
 <h1 style="color:white; text-align: center;">Table</h1>
 <style>
   #sample_style{
