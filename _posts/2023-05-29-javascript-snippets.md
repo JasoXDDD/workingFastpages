@@ -4,7 +4,7 @@ permalink: /javascriptTicket
 <head>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 </head>
-<h1 style="color:white; text-align: center;">Table</h1>
+<h1 style="color:white; text-align: left;">Table</h1>
 <style>
   #sample_style{
     width: 100%;
@@ -12,7 +12,7 @@ permalink: /javascriptTicket
     border: 4px solid #808080;
   }
 </style>
-<table id="table" style="width: 100%; color: #707070; border: 4px solid #909089; text-align: center;">
+<table id="table" style="width: 100%; color: #707070; border: 4px solid #909090;">
   <tr>
     <th>Name</th>
     <th>Score</th>
