@@ -36,7 +36,7 @@
         var k = l;
      
         while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
+            if (L[i]["score"] <= R[j]["score"]) {
                 arr[k] = L[i];
                 i++;
             }
@@ -73,7 +73,7 @@
         '<th>Name</th>' +
         '<th>Score</th>' +
         '</tr>';
-    $('#recentGames').append(labelsRow);
+    $('#table').append(labelsRow);
 
     let array = [{"name":"Jason","score":1000},
             {"name":"Jaso","score":1200}];
@@ -88,7 +88,7 @@
             '<td>' + score + '</td>' +
             '</tr>';
 
-        $('#recentGames').append(row);
+        $('#table').append(row);
     });
 </script>
 
