@@ -103,13 +103,15 @@ permalink: /javascriptTicket
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
         console.log(x,y);
-        if (245<x<255 && 395<x<400){
+        if (245<x<255 && 395<y<400){
             let counter=0
             const id = setInterval(() => {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
+                context.beginPath();
                 ctx.arc(250, 400, 10+counter, 0, 2 * Math.PI, true);
                 ctx.fillStyle = "#30db72";
                 ctx.fill(); 
+                context.beginPath();
                 ctx.arc(250, 400, 10-counter, 0, 2 * Math.PI, true);
                 ctx.fillStyle = "#000000";
                 ctx.fill();
