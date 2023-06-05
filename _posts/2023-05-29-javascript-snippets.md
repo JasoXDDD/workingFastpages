@@ -71,12 +71,6 @@ permalink: /javascriptTicket
         partition(arr,l,m,r);
     }
 
-    var labelsRow = '<tr>' +
-        '<th>Name</th>' +
-        '<th>Score</th>' +
-        '</tr>';
-    $('#table').append(labelsRow);
-
     let array = [{"name":"Jason","score":1000},
             {"name":"Jaso","score":1200}];
     mergeSort(array,0,array.length-1)
