@@ -1,6 +1,9 @@
 ---
 permalink: /javascriptTicket
 ---
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
 <h1 style="color:white; text-align: center;">Table</h1>
 <style>
   #sample_style{
@@ -18,7 +21,7 @@ permalink: /javascriptTicket
   </tbody>
 </table>
 
-<script src="https://code.jquery.com/jquery-1.12.4.min.js">
+<script>
     function partition(arr, l, m, r){
         var n1 = m - l + 1;
         var n2 = r - m;
