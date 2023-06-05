@@ -79,7 +79,7 @@ permalink: /javascriptTicket
 
     let array = [{"name":"Jason","score":1000},
             {"name":"Jaso","score":1200}];
-    mergeSort(array,0,array.length)
+    mergeSort(array,0,array.length-1)
     console.log(array)
 
     array.forEach(function (record){
