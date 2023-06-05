@@ -87,7 +87,7 @@ permalink: /javascriptTicket
 
         $('#table').append(row);
     });
-    let c = document.getElementById("myCanvas");
+    let c = document.getElementById("canvas");
     let ctx = c.getContext("2d");
     ctx.beginPath();
     ctx.arc(250, 400, 10, 0, 2 * Math.PI, true);
