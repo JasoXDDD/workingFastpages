@@ -113,6 +113,10 @@ permalink: /javascriptTicket
                 ctx.arc(250, 400, 10+counter, 0, 2 * Math.PI, true);
                 ctx.fillStyle = "#30db72";
                 ctx.fill();
+                counter+=1;
+                if (counter==9){
+                    clearInterval(id);
+                }
               }, 200);
         }
     });
