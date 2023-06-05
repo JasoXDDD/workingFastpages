@@ -107,6 +107,7 @@ permalink: /javascriptTicket
         if (!(clicked)){
             if (245<x&&x<255 && 395<y&&y<400){
                 let counter=0
+                clicked = true;
                 const id = setInterval(() => {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     ctx.beginPath();
@@ -122,8 +123,24 @@ permalink: /javascriptTicket
                         clearInterval(id);
                     }
                   }, 50);
-        }
+            }
         
+        } else {
+            const id = setInterval(() => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.arc(250, 400, 10+counter, 0, 2 * Math.PI, true);
+                ctx.fillStyle = "#30db72";
+                ctx.fill(); 
+                ctx.beginPath();
+                ctx.arc(250, 400, 10-counter, 0, 2 * Math.PI, true);
+                ctx.fillStyle = "#000000";
+                ctx.fill();
+                counter-=1;
+                if (counter==0){
+                    clearInterval(id);
+                }
+              }, 50);
         }
     });
 </script>
