@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "Javascript Snippets",
-            "content": "Table . Name Score .",
+            "content": ". Table . Name Score .",
             "url": "https://nighthawkcoders.github.io/APCSP/javascriptTicket",
             "relUrl": "/javascriptTicket",
             "date": " • May 29, 2023"
