@@ -12,7 +12,7 @@ permalink: /javascriptTicket
     border: 4px solid #808080;
   }
 </style>
-<table id="table" style="width: 100%; color:white; border: 4px solid #009614;">
+<table id="table" style="width: 100%; color: #707070; border: 4px solid #909089;">
   <tr>
     <th>Name</th>
     <th>Score</th>
