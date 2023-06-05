@@ -20,6 +20,7 @@ permalink: /javascriptTicket
   <tbody id="get">
   </tbody>
 </table>
+<canvas id="canvas" width="500" height="800" style="border:1px solid #000000;"></canvas>
 
 <script>
     function partition(arr, l, m, r){
@@ -86,4 +87,9 @@ permalink: /javascriptTicket
 
         $('#table').append(row);
     });
+    let c = document.getElementById("myCanvas");
+    let ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(250, 400, 10, 0, 2 * Math.PI, true);
+    ctx.fill();
 </script>
