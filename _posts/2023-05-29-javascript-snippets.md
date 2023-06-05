@@ -139,7 +139,7 @@ permalink: /javascriptTicket
                 ctx.fillStyle = "#000000";
                 ctx.fill();
                 counter-=1;
-                if (counter==0){
+                if (counter==-1){
                     clearInterval(id);
                 }
               }, 50);
