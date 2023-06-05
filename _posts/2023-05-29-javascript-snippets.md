@@ -6,10 +6,10 @@ permalink: /javascriptTicket
   #sample_style{
     width: 100%;
     color:white;
-    border: 2px solid #009614;
+    border: 4px solid #808080;
   }
 </style>
-<table id="table" style="width: 100%; color:white; border: 2px solid #009614;">
+<table id="table" style="width: 100%; color:white; border: 4px solid #009614;">
   <tr>
     <th>Name</th>
     <th>Score</th>
@@ -18,7 +18,7 @@ permalink: /javascriptTicket
   </tbody>
 </table>
 
-<script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js">
     function partition(arr, l, m, r){
         var n1 = m - l + 1;
         var n2 = r - m;
