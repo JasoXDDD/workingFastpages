@@ -38,7 +38,7 @@ permalink: /javascriptTicket
         var k = l;
      
         while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
+            if (L[i]["score"] <= R[j]["score"]) {
                 arr[k] = L[i];
                 i++;
             }
