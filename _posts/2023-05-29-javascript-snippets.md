@@ -71,8 +71,8 @@ permalink: /javascriptTicket
         partition(arr,l,m,r);
     }
 
-    let array = [{"name":"Jason","score":1000},
-            {"name":"Jaso","score":1200}];
+    let array = [{"name":"Jason","score":1200},
+            {"name":"Jaso","score":1000}];
     mergeSort(array,0,array.length-1)
     console.log(array)
 
