@@ -84,7 +84,7 @@ permalink: /javascriptTicket
         score = document.getElementById("score").value;
         array.push({name,score});
         mergeSort(array,0,array.length-1);
-        for (let i=0;i<array.length;i++){
+        for (let i=0;i<array.length-1;i++){
             $('tr:last-child').remove();
         }
         array.forEach(function (record){
