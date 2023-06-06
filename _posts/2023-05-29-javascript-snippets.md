@@ -12,6 +12,11 @@ permalink: /javascriptTicket
     border: 4px solid #808080;
   }
 </style>
+<label for="fname">Name:</label>
+<input type="text" id="name" name="name"><br><br>
+<label for="lname">Score:</label>
+<input type="text" id="score" name="score"><br><br>
+<button onclick="addEntry()">Submit</button>
 <table id="table" style="width: 100%; color: #707070; border: 4px solid #909090;">
   <tr>
     <th>Name</th>
@@ -72,21 +77,27 @@ permalink: /javascriptTicket
         partition(arr,l,m,r);
     }
 
-    let array = [{"name":"Jason","score":1200},
-            {"name":"Jaso","score":1000}];
-    mergeSort(array,0,array.length-1)
-    console.log(array)
+    let array = [];
 
-    array.forEach(function (record){
-        var name = record["name"];
-        var score = record["score"];
-        var row = '<tr>' +
-            '<td>' + name + '</td>' +
-            '<td>' + score + '</td>' +
-            '</tr>';
-
-        $('#table').append(row);
-    });
+    function addEntry(){
+        name = document.getElementById('name').value;
+        score = document.getElementById("score").value;
+        array.push({name,score});
+        mergeSort(array,0,array.length-1);
+        for (let i=0;i<array.length;i++){
+            $('tr:last-child').remove();
+        }
+        array.forEach(function (record){
+            var name = record["name"];
+            var score = record["score"];
+            var row = '<tr>' +
+                '<td>' + name + '</td>' +
+                '<td>' + score + '</td>' +
+                '</tr>';
+    
+            $('#table').append(row);
+        });
+    }
     let c = document.getElementById("canvas");
     let ctx = c.getContext("2d");
     ctx.beginPath();
