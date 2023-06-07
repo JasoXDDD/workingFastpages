@@ -127,7 +127,7 @@ permalink: /javascriptTicket
         const y = e.clientY - rect.top;
         console.log(x,y);
         if (!(clicked)){
-            if (dotx-10<x&&x<dotx+10 && 400-10<y&&y<400+10){
+            if (dotx-10<x&&x<dotx+10 && doty-10<y&&y<doty+10){
                 let counter=0
                 clicked = true;
                 const id = setInterval(() => {
