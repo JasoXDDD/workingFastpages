@@ -134,7 +134,7 @@ permalink: /javascriptTicket
                     if (counter==9){
                         clearInterval(id);
                     }
-                  }, 50);
+                  }, 10);
             }
         
         } else {
@@ -154,7 +154,7 @@ permalink: /javascriptTicket
                 if (counter==-1){
                     clearInterval(id);
                 }
-              }, 50);
+              }, 10);
         }
     });
 </script>
