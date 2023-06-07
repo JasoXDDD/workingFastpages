@@ -25,7 +25,7 @@ permalink: /javascriptTicket
   <tbody id="get">
   </tbody>
 </table>
-<canvas id="canvas" width="500" height="800" style="border:1px solid #000000;"></canvas>
+<canvas id="canvas" width="1500" height="800" style="border:1px solid #000000;"></canvas>
 
 <script>
     function partition(arr, l, m, r){
