@@ -136,7 +136,6 @@ permalink: /javascriptTicket
                     }
                   }, 10);
             }
-        
         } else {
             let counter = 9
             clicked = false;
