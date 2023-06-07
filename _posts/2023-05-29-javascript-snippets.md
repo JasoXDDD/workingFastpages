@@ -6,11 +6,19 @@ permalink: /javascriptTicket
 </head>
 <h1 style="color:white; text-align: left;">Table</h1>
 <style>
-  #sample_style{
-    width: 100%;
-    color:white;
-    border: 4px solid #808080;
-  }
+    #sample_style{
+        width: 100%;
+        color:white;
+        border: 4px solid #808080;
+    }
+    canvas {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 800px;
+    }
 </style>
 <label>Name:</label>
 <input type="text" id="name" name="name"><br><br>
