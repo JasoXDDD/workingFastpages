@@ -102,7 +102,7 @@ permalink: /javascriptTicket
     let c = document.getElementById("canvas");
     let ctx = c.getContext("2d");
     ctx.fillStyle = "#90EE90";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, c.width, c.height);
     ctx.beginPath();
     ctx.arc(250, 750, 10, 0, 2 * Math.PI, true);
     ctx.fillStyle = "#000000";
