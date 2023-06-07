@@ -99,11 +99,8 @@
     }
     let c = document.getElementById("canvas");
     let ctx = c.getContext("2d");
-    ctx.fillStyle = "#90EE90";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
-    ctx.arc(250, 750, 10, 0, 2 * Math.PI, true);
-    ctx.fillStyle = "#000000";
+    ctx.arc(250, 400, 10, 0, 2 * Math.PI, true);
     ctx.fill();
     let clicked = false;
     c.addEventListener('mousedown', function (e) {
@@ -137,7 +134,7 @@
                     }
                   }, 10);
             }
-        } else {
+        }else{
             let counter = 9
             clicked = false;
             const id = setInterval(() => {
