@@ -101,9 +101,10 @@
     let ctx = c.getContext("2d");
     ctx.fillStyle = "#90EE90";
     ctx.fillRect(0, 0, c.width, c.height);
-
+    let dotx=750;
+    let doty=400;
     ctx.beginPath();
-    ctx.arc(750, 400, 10, 0, 2 * Math.PI, true);
+    ctx.arc(dotx, doty, 10, 0, 2 * Math.PI, true);
     ctx.fillStyle = "#000000";
     ctx.fill();
     let clicked = false;
@@ -119,17 +120,18 @@
         const y = e.clientY - rect.top;
         console.log(x,y);
         if (!(clicked)){
-            if (240<x&&x<260 && 390<y&&y<410){
+            if (dotx-10<x&&x<dotx+10 && 400-10<y&&y<400+10){
                 let counter=0
                 clicked = true;
                 const id = setInterval(() => {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.fillStyle = "#90EE90";
+                    ctx.fillRect(0, 0, c.width, c.height);
                     ctx.beginPath();
-                    ctx.arc(250, 400, 10+counter, 0, 2 * Math.PI, true);
+                    ctx.arc(dotx, doty, 10+counter, 0, 2 * Math.PI, true);
                     ctx.fillStyle = "#30db72";
                     ctx.fill(); 
                     ctx.beginPath();
-                    ctx.arc(250, 400, 10-counter, 0, 2 * Math.PI, true);
+                    ctx.arc(dotx, doty, 10-counter, 0, 2 * Math.PI, true);
                     ctx.fillStyle = "#000000";
                     ctx.fill();
                     counter+=1;
@@ -142,13 +144,14 @@
             let counter = 9
             clicked = false;
             const id = setInterval(() => {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "#90EE90";
+                ctx.fillRect(0, 0, c.width, c.height);
                 ctx.beginPath();
-                ctx.arc(250, 400, 10+counter, 0, 2 * Math.PI, true);
+                ctx.arc(dotx, doty, 10+counter, 0, 2 * Math.PI, true);
                 ctx.fillStyle = "#30db72";
                 ctx.fill(); 
                 ctx.beginPath();
-                ctx.arc(250, 400, 10-counter, 0, 2 * Math.PI, true);
+                ctx.arc(dotx, doty, 10-counter, 0, 2 * Math.PI, true);
                 ctx.fillStyle = "#000000";
                 ctx.fill();
                 counter-=1;
