@@ -11,13 +11,10 @@ permalink: /javascriptTicket
         color:white;
         border: 4px solid #808080;
     }
-    canvas {
-        padding-left: 0;
-        padding-right: 0;
+    canvas{
         margin-left: auto;
         margin-right: auto;
         display: block;
-        width: 800px;
     }
 </style>
 <label>Name:</label>
