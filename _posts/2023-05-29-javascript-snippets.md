@@ -15,7 +15,7 @@ permalink: /javascriptTicket
 <label>Name:</label>
 <input type="text" id="name" name="name"><br><br>
 <label>Score:</label>
-<input type="text" id="score" name="score"><br><br>
+<label id="score" name="score">0</label><br><br>
 <button onclick="addEntry()">Submit</button>
 <table id="table" style="width: 100%; color: #707070; border: 4px solid #909090;">
   <tr>
