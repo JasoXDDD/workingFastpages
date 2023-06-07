@@ -31,7 +31,7 @@ permalink: /javascriptTicket
   </tbody>
 </table>
 <br><br>
-<canvas id="canvas" width="1500" height="800" style="border:1px solid #000000;"></canvas>
+<canvas id="canvas" width="800" height="500" style="border:1px solid #000000;"></canvas>
 
 <script>
     function partition(arr, l, m, r){
@@ -108,8 +108,8 @@ permalink: /javascriptTicket
     let ctx = c.getContext("2d");
     ctx.fillStyle = "#90EE90";
     ctx.fillRect(0, 0, c.width, c.height);
-    let dotx=750;
-    let doty=400;
+    let dotx=400;
+    let doty=250;
     ctx.beginPath();
     ctx.arc(dotx, doty, 10, 0, 2 * Math.PI, true);
     ctx.fillStyle = "#000000";
