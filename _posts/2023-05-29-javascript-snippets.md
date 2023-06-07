@@ -136,7 +136,7 @@ permalink: /javascriptTicket
                     }
                   }, 10);
             }
-        } else {
+        }else{
             let counter = 9
             clicked = false;
             const id = setInterval(() => {
