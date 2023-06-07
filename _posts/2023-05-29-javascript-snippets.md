@@ -12,9 +12,9 @@ permalink: /javascriptTicket
     border: 4px solid #808080;
   }
 </style>
-<label for="fname">Name:</label>
+<label>Name:</label>
 <input type="text" id="name" name="name"><br><br>
-<label for="lname">Score:</label>
+<label>Score:</label>
 <input type="text" id="score" name="score"><br><br>
 <button onclick="addEntry()">Submit</button>
 <table id="table" style="width: 100%; color: #707070; border: 4px solid #909090;">
