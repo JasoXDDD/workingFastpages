@@ -108,7 +108,7 @@ permalink: /javascriptTicket
     }
     let c = document.getElementById("canvas");
     let ctx = c.getContext("2d");
-    ctx.fillStyle = "#90EA90";
+    ctx.fillStyle = "rgb(90,234,90)";
     ctx.fillRect(0, 0, c.width, c.height);
     let dotx=400;
     let doty=250;
@@ -135,7 +135,7 @@ permalink: /javascriptTicket
                 document.getElementById('menu').style.display = 'block';
                 const id = setInterval(() => {
                     counter+=1;
-                    ctx.fillStyle = "#90EA90";
+                    ctx.fillStyle = "rgb(90,234,90)";
                     ctx.fillRect(0, 0, c.width, c.height);
                     ctx.beginPath();
                     ctx.arc(dotx, doty, 10+counter, 0, 2 * Math.PI, true);
