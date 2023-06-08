@@ -87,6 +87,8 @@ permalink: /javascriptTicket
 
     let array = [];
 
+    
+
     function addEntry(){
         name = document.getElementById('name').value;
         score = document.getElementById("score").value;
@@ -106,16 +108,20 @@ permalink: /javascriptTicket
             $('#table').append(row);
         });
     }
+    function orb(x,y){
+        ctx.fillStyle = "#000000";
+        ctx.beginPath();
+        ctx.arc(dotx, doty, 7.5, 0, 2 * Math.PI, true);
+        ctx.fill();
+        ctx.arc(dotx, doty, 10, 0, 2 * Math.PI, true);
+    }
     let c = document.getElementById("canvas");
     let ctx = c.getContext("2d");
-    ctx.fillStyle = "rgb(140,194,140)";
+    ctx.fillStyle = "rgb(140,200,140)";
     ctx.fillRect(0, 0, c.width, c.height);
     let dotx=400;
     let doty=250;
-    ctx.beginPath();
-    ctx.arc(dotx, doty, 10, 0, 2 * Math.PI, true);
-    ctx.fillStyle = "#000000";
-    ctx.fill();
+    orb(dotx,doty);
     let clicked = false;
     c.addEventListener('mousedown', function (e) {
         // Get the target
@@ -135,13 +141,9 @@ permalink: /javascriptTicket
                 document.getElementById('menu').style.display = 'block';
                 const id = setInterval(() => {
                     counter+=1;
-                    ctx.fillStyle = "rgb(140,194,140)";
+                    ctx.fillStyle = "rgb(140,200,140)";
                     ctx.fillRect(0, 0, c.width, c.height);
-                    ctx.beginPath();
-                    ctx.arc(dotx, doty, 10+counter, 0, 2 * Math.PI, true);
-                    ctx.fillStyle = "rgb("+(0+14*counter).toString()+","+(64+13*counter).toString()+","+(0+14*counter).toString()+")";
-                    console.log("rgb("+(0+14*counter).toString()+","+(64+13*counter).toString()+","+(0+14*counter).toString()+")")
-                    ctx.fill(); 
+                    orb(dotx,doty);
                     if (counter==10){
                         clearInterval(id);
                     }
