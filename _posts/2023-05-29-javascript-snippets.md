@@ -138,8 +138,10 @@ permalink: /javascriptTicket
             }
         }
         orb(dotx,doty,"rgb(0,0,0)",10);
-        time-=0.01;
-        document.getElementById("time").innerText = time.toFixed(2);
+        if (started){
+            time-=0.01;
+            document.getElementById("time").innerText = time.toFixed(2);
+        }
         if (time==0){
             clearInterval(id);
             document.getElementById("menu").style.display="block";
@@ -163,6 +165,9 @@ permalink: /javascriptTicket
             dotx=10+Math.floor(Math.random()*780);
             doty=10+Math.floor(Math.random()*480);
             score+=1;
+            if (!started){
+                started=true;
+            }
         }
     });
 </script>
