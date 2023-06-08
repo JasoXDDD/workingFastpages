@@ -19,6 +19,7 @@ permalink: /javascriptTicket
 </style>
 <canvas id="canvas" width="800" height="500" style="border:1px solid #000000;"></canvas>
 <div id="menu" style="display:none">
+<br><br>
 <label>Name:</label>
 <input type="text" id="name" name="name"><br><br>
 <label>Score:</label>
@@ -32,7 +33,6 @@ permalink: /javascriptTicket
   <tbody id="get">
   </tbody>
 </table>
-<br><br>
 </div>
 
 <script>
