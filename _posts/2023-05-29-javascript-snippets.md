@@ -108,10 +108,10 @@ permalink: /javascriptTicket
             $('#table').append(row);
         });
     }
-    function orb(x,y,color){
+    function orb(x,y,color,rad){
         ctx.fillStyle = color;
         ctx.beginPath();
-        ctx.arc(dotx, doty, 10, 0, 2 * Math.PI, true);
+        ctx.arc(dotx, doty, rad, 0, 2 * Math.PI, true);
         ctx.fill();
     }
     let c = document.getElementById("canvas");
@@ -120,7 +120,7 @@ permalink: /javascriptTicket
     ctx.fillRect(0, 0, c.width, c.height);
     let dotx=400;
     let doty=250;
-    orb(dotx,doty,"rgb(0,0,0)");
+    orb(dotx,doty,"rgb(0,0,0)",10);
     let clicked = false;
     c.addEventListener('mousedown', function (e) {
         // Get the target
@@ -142,7 +142,7 @@ permalink: /javascriptTicket
                     counter+=1;
                     ctx.fillStyle = "rgb(140,200,140)";
                     ctx.fillRect(0, 0, c.width, c.height);
-                    orb(dotx,doty,"rgb("+(0+14*counter).toString()+","+20*counter.toString()+","+(0+14*counter).toString()+")");
+                    orb(dotx,doty,"rgb("+14*counter.toString()+","+20*counter.toString()+","+14*counter.toString()+")",10+counter);
                     if (counter==10){
                         clearInterval(id);
                     }
