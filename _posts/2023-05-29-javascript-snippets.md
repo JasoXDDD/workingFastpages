@@ -126,6 +126,7 @@ permalink: /javascriptTicket
     let started = false;
     let tapped = [];
     let time = 30.00;
+    let score = 0;
     const id = setInterval(() => {
         ctx.fillStyle = "rgb(140,200,140)";
         ctx.fillRect(0, 0, c.width, c.height);
@@ -141,6 +142,8 @@ permalink: /javascriptTicket
         document.getElementById("time").innerText = time.toFixed(2);
         if (time==0){
             clearInterval(id);
+            document.getElementById("menu").style.display="block";
+            document.getElementById("score").innerText = score;
         }
     }, 10);
     c.addEventListener('mousedown', function (e) {
@@ -157,10 +160,9 @@ permalink: /javascriptTicket
         if (dotx-10<x&&x<dotx+10 && doty-10<y&&y<doty+10){
             tapped.push([dotx,doty,0]);
             console.log([dotx,doty,0]);
-            setTimeout(function(){
-                dotx=10+Math.floor(Math.random()*780);
-                doty=10+Math.floor(Math.random()*480);
-            }, 10);
+            dotx=10+Math.floor(Math.random()*780);
+            doty=10+Math.floor(Math.random()*480);
+            score+=1;
         }
     });
 </script>
