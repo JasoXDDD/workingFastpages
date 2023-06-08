@@ -155,7 +155,7 @@ permalink: /javascriptTicket
             }
         }
         orb(dotx,doty,"rgb(0,0,0)",10);
-        if (started){
+        if (started&&!stopped){
             time-=0.01;
             document.getElementById("time").innerText = time.toFixed(2);
         }
