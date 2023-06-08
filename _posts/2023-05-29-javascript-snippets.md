@@ -28,7 +28,6 @@ permalink: /javascriptTicket
 <label id="score">0</label><br><br>
 <button onclick="addEntry()">Submit</button>
 </div>
-<div id="end">
 <table id="table" style="width: 100%; color: #707070; border: 5px solid #909090; display:none">
   <tr>
     <th>Name</th>
@@ -38,7 +37,6 @@ permalink: /javascriptTicket
   </tbody>
 </table>
 <button onclick="retry()">Retry</button>
-</div>
 <script>
     function partition(arr, l, m, r){
         var n1 = m - l + 1;
@@ -112,7 +110,7 @@ permalink: /javascriptTicket
             $('#table').append(row);
         });
         document.getElementById("menu").style.display="none";
-        document.getElementById("end").style.display="block"
+        document.getElementById("table").style.display="block"
     }
 
     function retry(){
@@ -122,6 +120,9 @@ permalink: /javascriptTicket
         doty=250;
         started = false;
         stopped = false;
+        document.getElementById("time").innerText = time.toFixed(2);
+        document.getElementById("menu").style.display="none";
+        document.getElementById("table").style.display="none";
     }
 
     function orb(x,y,color,rad){
