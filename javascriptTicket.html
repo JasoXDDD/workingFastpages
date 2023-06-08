@@ -34,156 +34,159 @@
   <tbody id="get">
   </tbody>
 </table>
-<p><button onclick="retry()">Retry</button>
+
+<p><button onclick="retry()">Retry</button></p>
+
 <script>
     function partition(arr, l, m, r){
         var n1 = m - l + 1;
         var n2 = r - m;
         var L = new Array(n1);
-        var R = new Array(n2);</script></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    for (var i = 0; i &lt; n1; i++)
-        L[i] = arr[l + i];
-    for (var j = 0; j &lt; n2; j++)
-        R[j] = arr[m + 1 + j];
-    
-    var i = 0;
-    var j = 0;
-    var k = l;
- 
-    while (i &lt; n1 &amp;&amp; j &lt; n2) {
-        if (L[i]["score"] &lt;= R[j]["score"]) {
+        var R = new Array(n2);
+        
+        for (var i = 0; i < n1; i++)
+            L[i] = arr[l + i];
+        for (var j = 0; j < n2; j++)
+            R[j] = arr[m + 1 + j];
+        
+        var i = 0;
+        var j = 0;
+        var k = l;
+     
+        while (i < n1 && j < n2) {
+            if (L[i]["score"] <= R[j]["score"]) {
+                arr[k] = L[i];
+                i++;
+            }
+            else {
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+        while (i < n1) {
             arr[k] = L[i];
             i++;
+            k++;
         }
-        else {
+        while (j < n2) {
             arr[k] = R[j];
             j++;
+            k++;
         }
-        k++;
     }
-    while (i &lt; n1) {
-        arr[k] = L[i];
-        i++;
-        k++;
+    
+
+    function mergeSort(arr,l, r){
+        if(l>=r){
+            return;
+        }
+        var m =l+ parseInt((r-l)/2);
+        mergeSort(arr,l,m);
+        mergeSort(arr,m+1,r);
+        partition(arr,l,m,r);
     }
-    while (j &lt; n2) {
-        arr[k] = R[j];
-        j++;
-        k++;
+
+    let array = [];
+    let stopped = false;
+    
+
+    function addEntry(){
+        name = document.getElementById('name').value;
+        score = document.getElementById("score").innerText;
+        array.push({name,score});
+        mergeSort(array,0,array.length-1);
+        for (let i=0;i<array.length-1;i++){
+            $('tr:last-child').remove();
+        }
+        array.forEach(function (record){
+            var name = record["name"];
+            var score = record["score"];
+            var row = '<tr>' +
+                '<td>' + name + '</td>' +
+                '<td>' + score + '</td>' +
+                '</tr>';
+    
+            $('#table').append(row);
+        });
+        document.getElementById("menu").style.display="none";
+        document.getElementById("table").style.display="block"
     }
-}
 
-
-function mergeSort(arr,l, r){
-    if(l&gt;=r){
-        return;
+    function retry(){
+        time = 30;
+        score = 0;
+        dotx=400;
+        doty=250;
+        started = false;
+        stopped = false;
+        document.getElementById("time").innerText = time.toFixed(2);
+        document.getElementById("menu").style.display="none";
+        document.getElementById("table").style.display="none";
     }
-    var m =l+ parseInt((r-l)/2);
-    mergeSort(arr,l,m);
-    mergeSort(arr,m+1,r);
-    partition(arr,l,m,r);
-}
 
-let array = [];
-let stopped = false;
-
-
-function addEntry(){
-    name = document.getElementById('name').value;
-    score = document.getElementById("score").innerText;
-    array.push({name,score});
-    mergeSort(array,0,array.length-1);
-    for (let i=0;i&lt;array.length-1;i++){
-        $('tr:last-child').remove();
+    function orb(x,y,color,rad){
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(x, y, rad, 0, 2 * Math.PI, true);
+        ctx.fill();
     }
-    array.forEach(function (record){
-        var name = record["name"];
-        var score = record["score"];
-        var row = '&lt;tr&gt;' +
-            '&lt;td&gt;' + name + '&lt;/td&gt;' +
-            '&lt;td&gt;' + score + '&lt;/td&gt;' +
-            '&lt;/tr&gt;';
-
-        $('#table').append(row);
-    });
-    document.getElementById("menu").style.display="none";
-    document.getElementById("table").style.display="block"
-}
-
-function retry(){
-    time = 30;
-    score = 0;
-    dotx=400;
-    doty=250;
-    started = false;
-    stopped = false;
-    document.getElementById("time").innerText = time.toFixed(2);
-    document.getElementById("menu").style.display="none";
-    document.getElementById("table").style.display="none";
-}
-
-function orb(x,y,color,rad){
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.arc(x, y, rad, 0, 2 * Math.PI, true);
-    ctx.fill();
-}
-let c = document.getElementById("canvas");
-let ctx = c.getContext("2d");
-ctx.fillStyle = "rgb(140,200,140)";
-ctx.fillRect(0, 0, c.width, c.height);
-let dotx=400;
-let doty=250;
-orb(dotx,doty,"rgb(0,0,0)",10);
-let started = false;
-let tapped = [];
-let time = 30.00;
-let score = 0;
-let id = setInterval(() =&gt; {
+    let c = document.getElementById("canvas");
+    let ctx = c.getContext("2d");
     ctx.fillStyle = "rgb(140,200,140)";
     ctx.fillRect(0, 0, c.width, c.height);
-    for (let i=tapped.length-1;i&gt;=0;i--){
-        orb(tapped[i][0],tapped[i][1],"rgb("+14*tapped[i][2].toString()+","+20*tapped[i][2].toString()+","+14*tapped[i][2].toString()+")",10+tapped[i][2]);
-        tapped[i][2]+=1;
-        if (tapped[i][2]==10){
-            tapped.splice(i,1);
-        }
-    }
+    let dotx=400;
+    let doty=250;
     orb(dotx,doty,"rgb(0,0,0)",10);
-    if (started){
-        time-=0.01;
-        document.getElementById("time").innerText = time.toFixed(2);
-    }
-    if (time&lt;=0){
-        console.log("end");
-        stopped = true;
-        document.getElementById("menu").style.display="block";
-        document.getElementById("score").innerText = score;
-    }
-}, 10);
-c.addEventListener('mousedown', function (e) {
-    // Get the target
-    const target = e.target;
-
-    // Get the bounding rectangle of target
-    const rect = target.getBoundingClientRect();
-
-    // Mouse position
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    console.log(x,y);
-    if (!stopped){
-        if (dotx&lt;x&amp;&amp;x&lt;dotx+20 &amp;&amp; doty&lt;y&amp;&amp;y&lt;doty+20){
-            tapped.push([dotx,doty,0]);
-            console.log([dotx,doty,0]);
-            dotx=10+Math.floor(Math.random()*780);
-            doty=10+Math.floor(Math.random()*480);
-            score+=1;
-            if (!started){
-                started=true;
+    let started = false;
+    let tapped = [];
+    let time = 30.00;
+    let score = 0;
+    let id = setInterval(() => {
+        ctx.fillStyle = "rgb(140,200,140)";
+        ctx.fillRect(0, 0, c.width, c.height);
+        for (let i=tapped.length-1;i>=0;i--){
+            orb(tapped[i][0],tapped[i][1],"rgb("+14*tapped[i][2].toString()+","+20*tapped[i][2].toString()+","+14*tapped[i][2].toString()+")",10+tapped[i][2]);
+            tapped[i][2]+=1;
+            if (tapped[i][2]==10){
+                tapped.splice(i,1);
             }
         }
-    }
-}); &lt;/script&gt;
-</code></pre></div></div>
+        orb(dotx,doty,"rgb(0,0,0)",10);
+        if (started){
+            time-=0.01;
+            document.getElementById("time").innerText = time.toFixed(2);
+        }
+        if (time<=0){
+            console.log("end");
+            stopped = true;
+            document.getElementById("menu").style.display="block";
+            document.getElementById("score").innerText = score;
+        }
+    }, 10);
+    c.addEventListener('mousedown', function (e) {
+        // Get the target
+        const target = e.target;
+    
+        // Get the bounding rectangle of target
+        const rect = target.getBoundingClientRect();
+    
+        // Mouse position
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        console.log(x,y);
+        if (!stopped){
+            if (dotx<x&&x<dotx+20 && doty<y&&y<doty+20){
+                tapped.push([dotx,doty,0]);
+                console.log([dotx,doty,0]);
+                dotx=10+Math.floor(Math.random()*780);
+                doty=10+Math.floor(Math.random()*480);
+                score+=1;
+                if (!started){
+                    started=true;
+                }
+            }
+        }
+    });
+</script>
+
