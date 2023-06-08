@@ -108,7 +108,7 @@ permalink: /javascriptTicket
     }
     let c = document.getElementById("canvas");
     let ctx = c.getContext("2d");
-    ctx.fillStyle = "#90F090";
+    ctx.fillStyle = "#90EA90";
     ctx.fillRect(0, 0, c.width, c.height);
     let dotx=400;
     let doty=250;
@@ -134,11 +134,11 @@ permalink: /javascriptTicket
                 clicked = true;
                 document.getElementById('menu').style.display = 'block';
                 const id = setInterval(() => {
-                    ctx.fillStyle = "#90F090";
+                    ctx.fillStyle = "#90EA90";
                     ctx.fillRect(0, 0, c.width, c.height);
                     ctx.beginPath();
                     ctx.arc(dotx, doty, 10+counter, 0, 2 * Math.PI, true);
-                    ctx.fillStyle = "rgb("+(0+9*counter).toString()+","+(64+24*counter).toString()+","+(0+9*counter).toString()+")";
+                    ctx.fillStyle = "rgb("+(0+9*counter).toString()+","+(64+17*counter).toString()+","+(0+9*counter).toString()+")";
                     ctx.fill(); 
                     counter+=1;
                     if (counter==9){
