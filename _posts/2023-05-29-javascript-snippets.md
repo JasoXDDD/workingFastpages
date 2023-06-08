@@ -150,6 +150,7 @@ permalink: /javascriptTicket
         console.log(x,y);
         if (dotx-10<x&&x<dotx+10 && doty-10<y&&y<doty+10){
             tapped.push([dotx,doty,0]);
+            console.log([dotx,doty,0]);
             setTimeout(function(){
                 dotx=10+Math.floor(Math.random()*780);
                 doty=10+Math.floor(Math.random()*480);
