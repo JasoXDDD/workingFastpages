@@ -108,7 +108,7 @@ permalink: /javascriptTicket
     }
     let c = document.getElementById("canvas");
     let ctx = c.getContext("2d");
-    ctx.fillStyle = "rgb(90,234,90)";
+    ctx.fillStyle = "rgb(140,194,140)";
     ctx.fillRect(0, 0, c.width, c.height);
     let dotx=400;
     let doty=250;
@@ -135,12 +135,12 @@ permalink: /javascriptTicket
                 document.getElementById('menu').style.display = 'block';
                 const id = setInterval(() => {
                     counter+=1;
-                    ctx.fillStyle = "rgb(90,234,90)";
+                    ctx.fillStyle = "rgb(140,194,140)";
                     ctx.fillRect(0, 0, c.width, c.height);
                     ctx.beginPath();
                     ctx.arc(dotx, doty, 10+counter, 0, 2 * Math.PI, true);
-                    ctx.fillStyle = "rgb("+(0+9*counter).toString()+","+(64+17*counter).toString()+","+(0+9*counter).toString()+")";
-                    console.log("rgb("+(0+9*counter).toString()+","+(64+17*counter).toString()+","+(0+9*counter).toString()+")")
+                    ctx.fillStyle = "rgb("+(0+14*counter).toString()+","+(64+13*counter).toString()+","+(0+14*counter).toString()+")";
+                    console.log("rgb("+(0+14*counter).toString()+","+(64+13*counter).toString()+","+(0+14*counter).toString()+")")
                     ctx.fill(); 
                     if (counter==10){
                         clearInterval(id);
