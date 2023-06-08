@@ -18,7 +18,7 @@ permalink: /javascriptTicket
     }
 </style>
 <label>Time:</label>
-<label id="time">10.00</label><br><br>
+<label id="time">30.00</label><br><br>
 <canvas id="canvas" width="800" height="500" style="border:1px solid #000000;"></canvas>
 <div id="menu" style="display:none">
 <br><br>
@@ -125,6 +125,7 @@ permalink: /javascriptTicket
     orb(dotx,doty,"rgb(0,0,0)",10);
     let started = false;
     let tapped = [];
+    let time = 30.00;
     const id = setInterval(() => {
         ctx.fillStyle = "rgb(140,200,140)";
         ctx.fillRect(0, 0, c.width, c.height);
@@ -136,6 +137,11 @@ permalink: /javascriptTicket
             }
         }
         orb(dotx,doty,"rgb(0,0,0)",10);
+        time-=0.01;
+        document.getElementById("time").innerText = time.toFixed(2);
+        if (time==0){
+
+        }
     }, 10);
     c.addEventListener('mousedown', function (e) {
         // Get the target
