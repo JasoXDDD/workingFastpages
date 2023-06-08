@@ -138,7 +138,6 @@ permalink: /javascriptTicket
         if (!(clicked)){
             if (dotx-10<x&&x<dotx+10 && doty-10<y&&y<doty+10){
                 let counter=0
-                clicked = true;
                 document.getElementById('menu').style.display = 'block';
                 const id = setInterval(() => {
                     counter+=1;
