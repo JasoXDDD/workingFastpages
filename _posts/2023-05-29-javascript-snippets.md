@@ -139,6 +139,7 @@ permalink: /javascriptTicket
                     ctx.beginPath();
                     ctx.arc(dotx, doty, 10+counter, 0, 2 * Math.PI, true);
                     ctx.fillStyle = "rgb("+(0+9*counter).toString()+","+(64+17*counter).toString()+","+(0+9*counter).toString()+")";
+                    console.log("rgb("+(0+9*counter).toString()+","+(64+17*counter).toString()+","+(0+9*counter).toString()+")")
                     ctx.fill(); 
                     counter+=1;
                     if (counter==9){
