@@ -133,20 +133,18 @@
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
         console.log(x,y);
-        if (!(clicked)){
-            if (dotx-10<x&&x<dotx+10 && doty-10<y&&y<doty+10){
-                let counter=0
-                document.getElementById('menu').style.display = 'block';
-                const id = setInterval(() => {
-                    counter+=1;
-                    ctx.fillStyle = "rgb(140,200,140)";
-                    ctx.fillRect(0, 0, c.width, c.height);
-                    orb(dotx,doty,"rgb("+14*counter.toString()+","+20*counter.toString()+","+14*counter.toString()+")",10+counter);
-                    if (counter==10){
-                        clearInterval(id);
-                    }
-                  }, 10);
-            }
+        if (dotx-10<x&&x<dotx+10 && doty-10<y&&y<doty+10){
+            let counter=0
+            document.getElementById('menu').style.display = 'block';
+            const id = setInterval(() => {
+                counter+=1;
+                ctx.fillStyle = "rgb(140,200,140)";
+                ctx.fillRect(0, 0, c.width, c.height);
+                orb(dotx,doty,"rgb("+14*counter.toString()+","+20*counter.toString()+","+14*counter.toString()+")",10+counter);
+                if (counter==10){
+                    clearInterval(id);
+                }
+                }, 10);
         }
     });
 </script>
