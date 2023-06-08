@@ -108,7 +108,7 @@ permalink: /javascriptTicket
     }
     let c = document.getElementById("canvas");
     let ctx = c.getContext("2d");
-    ctx.fillStyle = "#90EE90";
+    ctx.fillStyle = "#90F090";
     ctx.fillRect(0, 0, c.width, c.height);
     let dotx=400;
     let doty=250;
@@ -134,42 +134,18 @@ permalink: /javascriptTicket
                 clicked = true;
                 document.getElementById('menu').style.display = 'block';
                 const id = setInterval(() => {
-                    ctx.fillStyle = "#90EE90";
+                    ctx.fillStyle = "#90F090";
                     ctx.fillRect(0, 0, c.width, c.height);
                     ctx.beginPath();
                     ctx.arc(dotx, doty, 10+counter, 0, 2 * Math.PI, true);
-                    ctx.fillStyle = "#30db72";
+                    ctx.fillStyle = "rgb("+(0+9*counter).toString()+","+(64+24*counter).toString()+","+(0+9*counter).toString()+")";
                     ctx.fill(); 
-                    ctx.beginPath();
-                    ctx.arc(dotx, doty, 10-counter, 0, 2 * Math.PI, true);
-                    ctx.fillStyle = "#000000";
-                    ctx.fill();
                     counter+=1;
                     if (counter==9){
                         clearInterval(id);
                     }
                   }, 10);
             }
-        } else {
-            let counter = 9
-            clicked = false;
-            document.getElementById('menu').style.display = 'none';
-            const id = setInterval(() => {
-                ctx.fillStyle = "#90EE90";
-                ctx.fillRect(0, 0, c.width, c.height);
-                ctx.beginPath();
-                ctx.arc(dotx, doty, 10+counter, 0, 2 * Math.PI, true);
-                ctx.fillStyle = "#30db72";
-                ctx.fill(); 
-                ctx.beginPath();
-                ctx.arc(dotx, doty, 10-counter, 0, 2 * Math.PI, true);
-                ctx.fillStyle = "#000000";
-                ctx.fill();
-                counter-=1;
-                if (counter==-1){
-                    clearInterval(id);
-                }
-              }, 10);
         }
     });
 </script>
