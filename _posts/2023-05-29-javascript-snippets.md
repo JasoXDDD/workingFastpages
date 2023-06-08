@@ -17,6 +17,7 @@ permalink: /javascriptTicket
         display: block;
     }
 </style>
+<canvas id="canvas" width="800" height="500" style="border:1px solid #000000;"></canvas>
 <div id="menu" style="display:none">
 <label>Name:</label>
 <input type="text" id="name" name="name"><br><br>
@@ -33,7 +34,6 @@ permalink: /javascriptTicket
 </table>
 <br><br>
 </div>
-<canvas id="canvas" width="800" height="500" style="border:1px solid #000000;"></canvas>
 
 <script>
     function partition(arr, l, m, r){
