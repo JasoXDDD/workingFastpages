@@ -127,7 +127,7 @@ permalink: /javascriptTicket
     let tapped = [];
     let time = 30.00;
     let score = 0;
-    const id = setInterval(() => {
+    let id = setInterval(() => {
         ctx.fillStyle = "rgb(140,200,140)";
         ctx.fillRect(0, 0, c.width, c.height);
         for (let i=tapped.length-1;i>=0;i--){
@@ -141,6 +141,7 @@ permalink: /javascriptTicket
         time-=0.01;
         document.getElementById("time").innerText = time.toFixed(2);
         if (time==0){
+            clearInterval(id);
             document.getElementById("menu").style.display="block";
             document.getElementById("score").innerText = score;
         }
