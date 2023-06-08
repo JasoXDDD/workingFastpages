@@ -36,7 +36,9 @@ permalink: /javascriptTicket
   <tbody id="get">
   </tbody>
 </table>
+
 <button onclick="retry()">Retry</button>
+
 <script>
     function partition(arr, l, m, r){
         var n1 = m - l + 1;
