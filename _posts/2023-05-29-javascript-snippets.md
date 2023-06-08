@@ -124,6 +124,19 @@ permalink: /javascriptTicket
     let doty=250;
     orb(dotx,doty,"rgb(0,0,0)",10);
     let started = false;
+    let tapped = [];
+    const id = setInterval(() => {
+        ctx.fillStyle = "rgb(140,200,140)";
+        ctx.fillRect(0, 0, c.width, c.height);
+        for (let i=tapped.length-1;i>=0;i--){
+            orb(tapped[i][0],tapped[i][1],"rgb("+14*tapped[i][2].toString()+","+20*tapped[i][2].toString()+","+14*tapped[i][2].toString()+")",10+tapped[i][2]);
+            tapped[i][2]+=1;
+            if (tapped[i][2]==10){
+                tapped.splice(i,1);
+            }
+        }
+        orb(dotx,doty,"rgb(0,0,0)",10);
+    }, 10);
     c.addEventListener('mousedown', function (e) {
         // Get the target
         const target = e.target;
@@ -136,17 +149,9 @@ permalink: /javascriptTicket
         const y = e.clientY - rect.top;
         console.log(x,y);
         if (dotx-10<x&&x<dotx+10 && doty-10<y&&y<doty+10){
-            let counter=0
-            document.getElementById('menu').style.display = 'block';
-            const id = setInterval(() => {
-                counter+=1;
-                ctx.fillStyle = "rgb(140,200,140)";
-                ctx.fillRect(0, 0, c.width, c.height);
-                orb(dotx,doty,"rgb("+14*counter.toString()+","+20*counter.toString()+","+14*counter.toString()+")",10+counter);
-                if (counter==10){
-                    clearInterval(id);
-                }
-                }, 10);
+            tapped.push([dotx,doty,0]);
         }
+        dotx=10+Math.floor(Math.random()*780);
+        doty=10+Math.floor(Math.random()*480);
     });
 </script>
