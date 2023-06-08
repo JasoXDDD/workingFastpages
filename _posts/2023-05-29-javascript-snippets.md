@@ -134,6 +134,7 @@ permalink: /javascriptTicket
                 clicked = true;
                 document.getElementById('menu').style.display = 'block';
                 const id = setInterval(() => {
+                    counter+=1;
                     ctx.fillStyle = "#90EA90";
                     ctx.fillRect(0, 0, c.width, c.height);
                     ctx.beginPath();
@@ -141,7 +142,6 @@ permalink: /javascriptTicket
                     ctx.fillStyle = "rgb("+(0+9*counter).toString()+","+(64+17*counter).toString()+","+(0+9*counter).toString()+")";
                     console.log("rgb("+(0+9*counter).toString()+","+(64+17*counter).toString()+","+(0+9*counter).toString()+")")
                     ctx.fill(); 
-                    counter+=1;
                     if (counter==9){
                         clearInterval(id);
                     }
