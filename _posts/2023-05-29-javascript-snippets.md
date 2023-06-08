@@ -19,15 +19,16 @@ permalink: /javascriptTicket
 </style>
 <label>Time:</label>
 <label id="time">30.00</label><br><br>
-<canvas id="canvas" width="800" height="500" style="border:1px solid #000000;"></canvas>
-<div id="menu" style="display:none">
+<canvas id="canvas" width="800" height="500" style="border:10px solid #000000;"></canvas>
 <br><br>
+<div id="menu" style="display:none">
 <label>Name:</label>
 <input type="text" id="name"><br><br>
 <label>Score:</label>
 <label id="score">0</label><br><br>
 <button onclick="addEntry()">Submit</button>
-<table id="table" style="width: 100%; color: #707070; border: 4px solid #909090;">
+</div>
+<table id="table" style="width: 100%; color: #707070; border: 5px solid #909090; display:none">
   <tr>
     <th>Name</th>
     <th>Score</th>
@@ -35,7 +36,6 @@ permalink: /javascriptTicket
   <tbody id="get">
   </tbody>
 </table>
-</div>
 
 <script>
     function partition(arr, l, m, r){
@@ -93,7 +93,7 @@ permalink: /javascriptTicket
 
     function addEntry(){
         name = document.getElementById('name').value;
-        score = document.getElementById("score").value;
+        score = document.getElementById("score").innerText;
         array.push({name,score});
         mergeSort(array,0,array.length-1);
         for (let i=0;i<array.length-1;i++){
@@ -109,6 +109,8 @@ permalink: /javascriptTicket
     
             $('#table').append(row);
         });
+        document.getElementById("menu").style.display="none";
+        document.getElementById("table").style.display="block"
     }
     function orb(x,y,color,rad){
         ctx.fillStyle = color;
