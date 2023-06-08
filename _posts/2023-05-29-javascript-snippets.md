@@ -28,6 +28,7 @@ permalink: /javascriptTicket
 <label id="score">0</label><br><br>
 <button onclick="addEntry()">Submit</button>
 </div>
+<div id="end">
 <table id="table" style="width: 100%; color: #707070; border: 5px solid #909090; display:none">
   <tr>
     <th>Name</th>
@@ -36,7 +37,8 @@ permalink: /javascriptTicket
   <tbody id="get">
   </tbody>
 </table>
-
+<button onclick="retry()">Retry</button>
+</div>
 <script>
     function partition(arr, l, m, r){
         var n1 = m - l + 1;
@@ -88,7 +90,7 @@ permalink: /javascriptTicket
     }
 
     let array = [];
-
+    let stopped = false;
     
 
     function addEntry(){
@@ -110,8 +112,18 @@ permalink: /javascriptTicket
             $('#table').append(row);
         });
         document.getElementById("menu").style.display="none";
-        document.getElementById("table").style.display="block"
+        document.getElementById("end").style.display="block"
     }
+
+    function retry(){
+        time = 30;
+        score = 0;
+        dotx=400;
+        doty=250;
+        started = false;
+        stopped = false;
+    }
+
     function orb(x,y,color,rad){
         ctx.fillStyle = color;
         ctx.beginPath();
@@ -146,7 +158,7 @@ permalink: /javascriptTicket
         }
         if (time<=0){
             console.log("end");
-            clearInterval(id);
+            stopped = true;
             document.getElementById("menu").style.display="block";
             document.getElementById("score").innerText = score;
         }
@@ -162,14 +174,16 @@ permalink: /javascriptTicket
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
         console.log(x,y);
-        if (dotx<x&&x<dotx+20 && doty<y&&y<doty+20){
-            tapped.push([dotx,doty,0]);
-            console.log([dotx,doty,0]);
-            dotx=10+Math.floor(Math.random()*780);
-            doty=10+Math.floor(Math.random()*480);
-            score+=1;
-            if (!started){
-                started=true;
+        if (!stopped){
+            if (dotx<x&&x<dotx+20 && doty<y&&y<doty+20){
+                tapped.push([dotx,doty,0]);
+                console.log([dotx,doty,0]);
+                dotx=10+Math.floor(Math.random()*780);
+                doty=10+Math.floor(Math.random()*480);
+                score+=1;
+                if (!started){
+                    started=true;
+                }
             }
         }
     });
