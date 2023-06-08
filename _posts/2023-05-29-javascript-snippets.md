@@ -140,7 +140,7 @@ permalink: /javascriptTicket
         time-=0.01;
         document.getElementById("time").innerText = time.toFixed(2);
         if (time==0){
-
+            clearInterval(id);
         }
     }, 10);
     c.addEventListener('mousedown', function (e) {
