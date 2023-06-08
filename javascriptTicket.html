@@ -15,11 +15,12 @@
     }
 </style>
 
-<p><label>Name:</label>
+<div id="menu" style="display:none">
+<label>Name:</label>
 <input type="text" id="name" name="name" /><br /><br />
 <label>Score:</label>
 <label id="score" name="score">0</label><br /><br />
-<button onclick="addEntry()">Submit</button></p>
+<button onclick="addEntry()">Submit</button>
 <table id="table" style="width: 100%; color: #707070; border: 4px solid #909090;">
   <tr>
     <th>Name</th>
@@ -28,7 +29,8 @@
   <tbody id="get">
   </tbody>
 </table>
-<p><br /><br /></p>
+<br /><br />
+</div>
 <canvas id="canvas" width="800" height="500" style="border:1px solid #000000;"></canvas>
 
 <script>
@@ -128,6 +130,7 @@
             if (dotx-10<x&&x<dotx+10 && doty-10<y&&y<doty+10){
                 let counter=0
                 clicked = true;
+                document.getElementById('menu').style.display = 'block';
                 const id = setInterval(() => {
                     ctx.fillStyle = "#90EE90";
                     ctx.fillRect(0, 0, c.width, c.height);
@@ -148,6 +151,7 @@
         } else {
             let counter = 9
             clicked = false;
+            document.getElementById('menu').style.display = 'none';
             const id = setInterval(() => {
                 ctx.fillStyle = "#90EE90";
                 ctx.fillRect(0, 0, c.width, c.height);
