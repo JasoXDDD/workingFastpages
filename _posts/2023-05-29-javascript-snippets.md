@@ -143,6 +143,7 @@ permalink: /javascriptTicket
             document.getElementById("time").innerText = time.toFixed(2);
         }
         if (time<=0){
+            console.log("end");
             clearInterval(id);
             document.getElementById("menu").style.display="block";
             document.getElementById("score").innerText = score;
