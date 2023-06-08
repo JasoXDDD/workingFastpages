@@ -113,7 +113,7 @@ permalink: /javascriptTicket
     function orb(x,y,color,rad){
         ctx.fillStyle = color;
         ctx.beginPath();
-        ctx.arc(dotx, doty, rad, 0, 2 * Math.PI, true);
+        ctx.arc(x, y, rad, 0, 2 * Math.PI, true);
         ctx.fill();
     }
     let c = document.getElementById("canvas");
