@@ -17,6 +17,7 @@ permalink: /javascriptTicket
         display: block;
     }
 </style>
+<div id="menu" style="display:none">
 <label>Name:</label>
 <input type="text" id="name" name="name"><br><br>
 <label>Score:</label>
@@ -31,6 +32,7 @@ permalink: /javascriptTicket
   </tbody>
 </table>
 <br><br>
+</div>
 <canvas id="canvas" width="800" height="500" style="border:1px solid #000000;"></canvas>
 
 <script>
@@ -130,6 +132,7 @@ permalink: /javascriptTicket
             if (dotx-10<x&&x<dotx+10 && doty-10<y&&y<doty+10){
                 let counter=0
                 clicked = true;
+                document.getElementById('menu').style.display = 'block';
                 const id = setInterval(() => {
                     ctx.fillStyle = "#90EE90";
                     ctx.fillRect(0, 0, c.width, c.height);
@@ -150,6 +153,7 @@ permalink: /javascriptTicket
         } else {
             let counter = 9
             clicked = false;
+            document.getElementById('menu').style.display = 'none';
             const id = setInterval(() => {
                 ctx.fillStyle = "#90EE90";
                 ctx.fillRect(0, 0, c.width, c.height);
