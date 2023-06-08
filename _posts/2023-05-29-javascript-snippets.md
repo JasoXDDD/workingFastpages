@@ -162,7 +162,7 @@ permalink: /javascriptTicket
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
         console.log(x,y);
-        if (dotx-10<x&&x<dotx+10 && doty-10<y&&y<doty+10){
+        if (dotx<x&&x<dotx+20 && doty<y&&y<doty+20){
             tapped.push([dotx,doty,0]);
             console.log([dotx,doty,0]);
             dotx=10+Math.floor(Math.random()*780);
